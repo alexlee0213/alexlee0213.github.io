@@ -12,6 +12,7 @@ include:
 
 # ─── Theme ────────────────────────────────────────────────────────────────────
 remote_theme: "mmistakes/minimal-mistakes@4.28.0"
+minimal_mistakes_skin: "dark"
 
 plugins:
   - jekyll-feed
@@ -43,6 +44,8 @@ defaults:
       read_time: true
       share: true
       related: true
+      toc: true
+      toc_sticky: true
   # Pages
   - scope:
       path: ""
