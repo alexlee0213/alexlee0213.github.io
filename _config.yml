@@ -1,30 +1,71 @@
+# ─── Site Settings ────────────────────────────────────────────────────────────
 title: Alex Lee's Blog
+subtitle: "개인 블로그 & 프로젝트 문서 & 연구 노트"
 description: "개인 블로그 & 프로젝트 문서 & 연구 노트"
 baseurl: ""
 url: "https://alexlee0213.github.io"
+locale: "ko-KR"
 
-# Build settings
-theme: minima
+# ─── Theme ────────────────────────────────────────────────────────────────────
+remote_theme: "mmistakes/minimal-mistakes@4.28.0"
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-include-cache
 
-# Site settings
-lang: ko
-author: Alex Lee
+# ─── Author ───────────────────────────────────────────────────────────────────
+author:
+  name: "Alex Lee"
+  bio: "개발자 · 연구자"
+  location: "Korea"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/alexlee0213"
 
-# Permalink
+# ─── Permalink ────────────────────────────────────────────────────────────────
 permalink: /:categories/:year/:month/:day/:title/
 
-# Collections
+# ─── Collections ──────────────────────────────────────────────────────────────
 collections:
   research:
     output: true
     permalink: /research/:name/
-#   projects:
-#     output: true
 
-# Navigation header links
-header_pages:
-  - index.md
-  - research.md
+# ─── Defaults ─────────────────────────────────────────────────────────────────
+defaults:
+  # Posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      share: true
+      related: true
+  # Research
+  - scope:
+      path: ""
+      type: research
+    values:
+      layout: single
+      author_profile: false
+      read_time: true
+      share: true
+  # Pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: false
+
+# ─── Tag & Category Archives ─────────────────────────────────────────────────
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/

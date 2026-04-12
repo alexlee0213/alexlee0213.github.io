@@ -1,0 +1,11 @@
+main:
+  - title: "Home"
+    url: /
+  - title: "Posts"
+    url: /posts/
+  - title: "Research"
+    url: /research/
+  - title: "Tags"
+    url: /tags/
+  - title: "Categories"
+    url: /categories/
