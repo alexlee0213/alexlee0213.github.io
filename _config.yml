@@ -51,6 +51,10 @@ defaults:
       layout: single
       author_profile: false
 
+# ─── Search ──────────────────────────────────────────────────────────────────
+search: true
+search_full_content: true
+
 # ─── Tag & Category Archives ─────────────────────────────────────────────────
 category_archive:
   type: liquid
