@@ -16,9 +16,15 @@ author: Alex Lee
 # Permalink
 permalink: /:categories/:year/:month/:day/:title/
 
-# Collections (나중에 프로젝트 문서, 연구과제용으로 확장 가능)
-# collections:
+# Collections
+collections:
+  research:
+    output: true
+    permalink: /research/:name/
 #   projects:
 #     output: true
-#   research:
-#     output: true
+
+# Navigation header links
+header_pages:
+  - index.md
+  - research.md
