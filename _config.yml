@@ -11,8 +11,7 @@ plugins:
 
 # Site settings
 lang: ko
-author:
-  name: Alex Lee
+author: Alex Lee
 
 # Permalink
 permalink: /:categories/:year/:month/:day/:title/
