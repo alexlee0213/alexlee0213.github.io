@@ -1,0 +1,41 @@
+<script>
+(function() {
+  // Insert toggle button into the masthead navigation
+  function insertToggle() {
+    var nav = document.querySelector('.greedy-nav');
+    if (!nav) return;
+
+    var btn = document.createElement('button');
+    btn.className = 'theme-toggle';
+    btn.setAttribute('aria-label', '테마 전환');
+    btn.setAttribute('title', '라이트/다크 모드 전환');
+    updateIcon(btn);
+
+    btn.addEventListener('click', function() {
+      var current = document.documentElement.getAttribute('data-theme');
+      var next = (current === 'light') ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      updateIcon(btn);
+    });
+
+    nav.appendChild(btn);
+  }
+
+  function updateIcon(btn) {
+    var theme = document.documentElement.getAttribute('data-theme');
+    if (theme === 'light') {
+      btn.textContent = '\u{1F319}'; // moon
+    } else {
+      btn.textContent = '\u{2600}\u{FE0F}'; // sun
+    }
+  }
+
+  // Run on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', insertToggle);
+  } else {
+    insertToggle();
+  }
+})();
+</script>
