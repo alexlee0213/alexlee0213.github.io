@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "블로그를 시작합니다!"
-date: 2026-04-12
+date: 2026-04-12 09:00:00 +0900
 categories: blog
 tags: [intro, blog]
 ---
