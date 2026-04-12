@@ -6,6 +6,10 @@ baseurl: ""
 url: "https://alexlee0213.github.io"
 locale: "ko-KR"
 
+# ─── Include ──────────────────────────────────────────────────────────────────
+include:
+  - _pages
+
 # ─── Theme ────────────────────────────────────────────────────────────────────
 remote_theme: "mmistakes/minimal-mistakes@4.28.0"
 
