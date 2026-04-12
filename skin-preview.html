@@ -1,0 +1,226 @@
+---
+layout: null
+permalink: /skin-preview/
+---
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minimal Mistakes Skin Preview</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #1a1a2e; color: #eee; padding: 2rem; }
+  h1 { text-align: center; margin-bottom: 0.5rem; font-size: 1.8rem; }
+  .subtitle { text-align: center; color: #aaa; margin-bottom: 2rem; font-size: 0.95rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; max-width: 1200px; margin: 0 auto; }
+  .card { border-radius: 12px; overflow: hidden; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; position: relative; }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+  .card.active { outline: 3px solid #f0c040; outline-offset: 2px; }
+  .card.active::after { content: '✓ 현재 적용됨'; position: absolute; top: 10px; right: 10px; background: #f0c040; color: #000; padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: bold; }
+  .preview { height: 180px; display: flex; flex-direction: column; }
+  .preview-header { height: 44px; display: flex; align-items: center; padding: 0 16px; font-weight: 600; font-size: 0.85rem; }
+  .preview-body { flex: 1; display: flex; }
+  .preview-sidebar { width: 70px; padding: 12px 8px; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .preview-avatar { width: 36px; height: 36px; border-radius: 50%; opacity: 0.7; }
+  .preview-content { flex: 1; padding: 12px; }
+  .preview-title { height: 10px; width: 60%; border-radius: 4px; margin-bottom: 8px; }
+  .preview-line { height: 6px; border-radius: 3px; margin-bottom: 5px; }
+  .preview-line.short { width: 75%; }
+  .preview-line.medium { width: 90%; }
+  .preview-line.long { width: 100%; }
+  .preview-link { height: 8px; width: 40%; border-radius: 3px; margin-top: 6px; }
+  .info { padding: 14px 16px; background: rgba(255,255,255,0.05); }
+  .info h3 { font-size: 1rem; margin-bottom: 4px; }
+  .info p { font-size: 0.8rem; color: #aaa; line-height: 1.4; }
+  .config { font-family: monospace; font-size: 0.75rem; color: #8be; margin-top: 6px; background: rgba(0,0,0,0.3); padding: 4px 8px; border-radius: 4px; display: inline-block; }
+</style>
+</head>
+<body>
+<h1>Minimal Mistakes Skin Preview</h1>
+<p class="subtitle">_config.yml에서 <code>minimal_mistakes_skin</code> 값을 변경하세요</p>
+<div class="grid">
+
+  <!-- Default -->
+  <div class="card">
+    <div class="preview" style="background:#fff;">
+      <div class="preview-header" style="background:#fff; color:#222; border-bottom:1px solid #eee;">Alex Lee's Blog</div>
+      <div class="preview-body">
+        <div class="preview-sidebar" style="background:#fff;"><div class="preview-avatar" style="background:#ccc;"></div></div>
+        <div class="preview-content">
+          <div class="preview-title" style="background:#333;"></div>
+          <div class="preview-line long" style="background:#ddd;"></div>
+          <div class="preview-line medium" style="background:#ddd;"></div>
+          <div class="preview-line short" style="background:#ddd;"></div>
+          <div class="preview-link" style="background:#3d85c6;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="info"><h3>default</h3><p>깔끔한 화이트 배경, 무난한 기본 테마</p><div class="config">minimal_mistakes_skin: "default"</div></div>
+  </div>
+
+  <!-- Air -->
+  <div class="card">
+    <div class="preview" style="background:#fff;">
+      <div class="preview-header" style="background:#fff; color:#222; border-bottom:1px solid #eee;">Alex Lee's Blog</div>
+      <div class="preview-body">
+        <div class="preview-sidebar" style="background:#fff;"><div class="preview-avatar" style="background:#ccc;"></div></div>
+        <div class="preview-content">
+          <div class="preview-title" style="background:#333;"></div>
+          <div class="preview-line long" style="background:#e0e0e0;"></div>
+          <div class="preview-line medium" style="background:#e0e0e0;"></div>
+          <div class="preview-line short" style="background:#e0e0e0;"></div>
+          <div class="preview-link" style="background:#5091cd;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="info"><h3>air</h3><p>라이트 블루 톤, 시원하고 가벼운 느낌</p><div class="config">minimal_mistakes_skin: "air"</div></div>
+  </div>
+
+  <!-- Aqua -->
+  <div class="card">
+    <div class="preview" style="background:#fff;">
+      <div class="preview-header" style="background:#fff; color:#222; border-bottom:1px solid #dde6e9;">Alex Lee's Blog</div>
+      <div class="preview-body">
+        <div class="preview-sidebar" style="background:#fbfcfc;"><div class="preview-avatar" style="background:#c4d8dc;"></div></div>
+        <div class="preview-content">
+          <div class="preview-title" style="background:#333;"></div>
+          <div class="preview-line long" style="background:#dde6e9;"></div>
+          <div class="preview-line medium" style="background:#dde6e9;"></div>
+          <div class="preview-line short" style="background:#dde6e9;"></div>
+          <div class="preview-link" style="background:#44aaaa;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="info"><h3>aqua</h3><p>청록색 악센트, 산뜻한 아쿠아 톤</p><div class="config">minimal_mistakes_skin: "aqua"</div></div>
+  </div>
+
+  <!-- Contrast -->
+  <div class="card">
+    <div class="preview" style="background:#fff;">
+      <div class="preview-header" style="background:#000; color:#fff;">Alex Lee's Blog</div>
+      <div class="preview-body">
+        <div class="preview-sidebar" style="background:#fff;"><div class="preview-avatar" style="background:#000;"></div></div>
+        <div class="preview-content">
+          <div class="preview-title" style="background:#000;"></div>
+          <div class="preview-line long" style="background:#ccc;"></div>
+          <div class="preview-line medium" style="background:#ccc;"></div>
+          <div class="preview-line short" style="background:#ccc;"></div>
+          <div class="preview-link" style="background:#000;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="info"><h3>contrast</h3><p>흑백 하이 콘트라스트, 선명하고 강렬한</p><div class="config">minimal_mistakes_skin: "contrast"</div></div>
+  </div>
+
+  <!-- Dark -->
+  <div class="card active">
+    <div class="preview" style="background:#252a34;">
+      <div class="preview-header" style="background:#252a34; color:#eee; border-bottom:1px solid #333;">Alex Lee's Blog</div>
+      <div class="preview-body">
+        <div class="preview-sidebar" style="background:#252a34;"><div class="preview-avatar" style="background:#444;"></div></div>
+        <div class="preview-content">
+          <div class="preview-title" style="background:#eee;"></div>
+          <div class="preview-line long" style="background:#444;"></div>
+          <div class="preview-line medium" style="background:#444;"></div>
+          <div class="preview-line short" style="background:#444;"></div>
+          <div class="preview-link" style="background:#ecc44d;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="info"><h3>dark</h3><p>어두운 배경에 골드 악센트, 눈이 편한 다크모드</p><div class="config">minimal_mistakes_skin: "dark"</div></div>
+  </div>
+
+  <!-- Dirt -->
+  <div class="card">
+    <div class="preview" style="background:#f8f5f0;">
+      <div class="preview-header" style="background:#f8f5f0; color:#36261a; border-bottom:1px solid #e0d6c8;">Alex Lee's Blog</div>
+      <div class="preview-body">
+        <div class="preview-sidebar" style="background:#f8f5f0;"><div class="preview-avatar" style="background:#c8b89a;"></div></div>
+        <div class="preview-content">
+          <div class="preview-title" style="background:#36261a;"></div>
+          <div class="preview-line long" style="background:#e0d6c8;"></div>
+          <div class="preview-line medium" style="background:#e0d6c8;"></div>
+          <div class="preview-line short" style="background:#e0d6c8;"></div>
+          <div class="preview-link" style="background:#8b6914;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="info"><h3>dirt</h3><p>따뜻한 브라운 톤, 빈티지 느낌</p><div class="config">minimal_mistakes_skin: "dirt"</div></div>
+  </div>
+
+  <!-- Mint -->
+  <div class="card">
+    <div class="preview" style="background:#fff;">
+      <div class="preview-header" style="background:#fff; color:#222; border-bottom:1px solid #e0ebe0;">Alex Lee's Blog</div>
+      <div class="preview-body">
+        <div class="preview-sidebar" style="background:#f8fbf8;"><div class="preview-avatar" style="background:#b4d4b4;"></div></div>
+        <div class="preview-content">
+          <div class="preview-title" style="background:#333;"></div>
+          <div class="preview-line long" style="background:#dde9dd;"></div>
+          <div class="preview-line medium" style="background:#dde9dd;"></div>
+          <div class="preview-line short" style="background:#dde9dd;"></div>
+          <div class="preview-link" style="background:#3aaa6e;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="info"><h3>mint</h3><p>민트 그린 악센트, 자연스럽고 신선한</p><div class="config">minimal_mistakes_skin: "mint"</div></div>
+  </div>
+
+  <!-- Neon -->
+  <div class="card">
+    <div class="preview" style="background:#1b1b2f;">
+      <div class="preview-header" style="background:#1b1b2f; color:#d4f0ff; border-bottom:1px solid #2d2d50;">Alex Lee's Blog</div>
+      <div class="preview-body">
+        <div class="preview-sidebar" style="background:#1b1b2f;"><div class="preview-avatar" style="background:#3d3d6b;"></div></div>
+        <div class="preview-content">
+          <div class="preview-title" style="background:#d4f0ff;"></div>
+          <div class="preview-line long" style="background:#2d2d50;"></div>
+          <div class="preview-line medium" style="background:#2d2d50;"></div>
+          <div class="preview-line short" style="background:#2d2d50;"></div>
+          <div class="preview-link" style="background:#00e5ff;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="info"><h3>neon</h3><p>진한 다크 배경에 네온 블루, 사이버펑크 느낌</p><div class="config">minimal_mistakes_skin: "neon"</div></div>
+  </div>
+
+  <!-- Plum -->
+  <div class="card">
+    <div class="preview" style="background:#fff;">
+      <div class="preview-header" style="background:#fff; color:#222; border-bottom:1px solid #e6dce8;">Alex Lee's Blog</div>
+      <div class="preview-body">
+        <div class="preview-sidebar" style="background:#faf6fb;"><div class="preview-avatar" style="background:#c4a8cc;"></div></div>
+        <div class="preview-content">
+          <div class="preview-title" style="background:#333;"></div>
+          <div class="preview-line long" style="background:#e6dce8;"></div>
+          <div class="preview-line medium" style="background:#e6dce8;"></div>
+          <div class="preview-line short" style="background:#e6dce8;"></div>
+          <div class="preview-link" style="background:#7b4f8a;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="info"><h3>plum</h3><p>퍼플 악센트, 부드럽고 우아한</p><div class="config">minimal_mistakes_skin: "plum"</div></div>
+  </div>
+
+  <!-- Sunrise -->
+  <div class="card">
+    <div class="preview" style="background:#fff;">
+      <div class="preview-header" style="background:#fff; color:#222; border-bottom:1px solid #f0e0d0;">Alex Lee's Blog</div>
+      <div class="preview-body">
+        <div class="preview-sidebar" style="background:#fffaf5;"><div class="preview-avatar" style="background:#ddb890;"></div></div>
+        <div class="preview-content">
+          <div class="preview-title" style="background:#333;"></div>
+          <div class="preview-line long" style="background:#f0e0d0;"></div>
+          <div class="preview-line medium" style="background:#f0e0d0;"></div>
+          <div class="preview-line short" style="background:#f0e0d0;"></div>
+          <div class="preview-link" style="background:#d2691e;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="info"><h3>sunrise</h3><p>따뜻한 오렌지/옐로 톤, 일출 느낌</p><div class="config">minimal_mistakes_skin: "sunrise"</div></div>
+  </div>
+
+</div>
+</body>
+</html>
