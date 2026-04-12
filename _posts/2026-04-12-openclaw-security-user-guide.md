@@ -2,8 +2,9 @@
 layout: single
 title: "OpenClaw 사용자 보안 가이드 — 비기술자를 위한 핵심 요약"
 date: 2026-04-12
-summary: "OpenClaw의 보안 위험을 비기술자도 이해할 수 있도록 정리한 가이드. 주요 위험, 설치 환경별 안전도, 필수 보안 규칙, 실제 사고 사례 및 체크리스트를 포함"
+categories: [research]
 tags: [AI Agent, OpenClaw, Security, User Guide]
+excerpt: "OpenClaw의 보안 위험을 비기술자도 이해할 수 있도록 정리한 가이드. 주요 위험, 설치 환경별 안전도, 필수 보안 규칙, 실제 사고 사례 및 체크리스트를 포함"
 ---
 
 > **작성일**: 2026년 4월 12일 · **기준 버전**: OpenClaw v2026.4.7-1

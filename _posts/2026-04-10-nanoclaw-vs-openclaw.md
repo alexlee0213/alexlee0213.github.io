@@ -2,8 +2,9 @@
 layout: single
 title: "NanoClaw vs OpenClaw — 15항목 비교 분석"
 date: 2026-04-10
-summary: "경량 보안 중심의 NanoClaw와 대규모 생태계의 OpenClaw을 15개 항목으로 비교 분석한 연구 노트"
+categories: [research]
 tags: [AI Agent, NanoClaw, OpenClaw, Framework]
+excerpt: "경량 보안 중심의 NanoClaw와 대규모 생태계의 OpenClaw을 15개 항목으로 비교 분석한 연구 노트"
 ---
 
 > **작성일**: 2026년 4월 10일 · **출처**: 4-Agent Swarm Research

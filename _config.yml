@@ -31,12 +31,6 @@ author:
 # ─── Permalink ────────────────────────────────────────────────────────────────
 permalink: /:categories/:year/:month/:day/:title/
 
-# ─── Collections ──────────────────────────────────────────────────────────────
-collections:
-  research:
-    output: true
-    permalink: /research/:name/
-
 # ─── Defaults ─────────────────────────────────────────────────────────────────
 defaults:
   # Posts
@@ -49,15 +43,6 @@ defaults:
       read_time: true
       share: true
       related: true
-  # Research
-  - scope:
-      path: ""
-      type: research
-    values:
-      layout: single
-      author_profile: false
-      read_time: true
-      share: true
   # Pages
   - scope:
       path: ""

@@ -1,9 +1,10 @@
 ---
 layout: single
 title: "MCP 전송 방식 비교: STDIO vs Streamable HTTP"
-summary: "MCP(Model Context Protocol)의 두 가지 전송 방식인 STDIO와 Streamable HTTP의 작동 원리, 아키텍처 차이, 인증 방식, 사용 사례를 비교 분석한 연구 노트"
 date: 2026-04-12
+categories: [research]
 tags: [MCP, Model Context Protocol, STDIO, HTTP, SSE, Streamable HTTP, Claude, AI, 인증, OAuth]
+excerpt: "MCP(Model Context Protocol)의 두 가지 전송 방식인 STDIO와 Streamable HTTP의 작동 원리, 아키텍처 차이, 인증 방식, 사용 사례를 비교 분석한 연구 노트"
 ---
 
 ## 개요
