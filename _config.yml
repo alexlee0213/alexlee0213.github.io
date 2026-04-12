@@ -7,19 +7,19 @@ url: "https://alexlee0213.github.io"
 theme: minima
 plugins:
   - jekyll-feed
-    - jekyll-seo-tag
+  - jekyll-seo-tag
 
-    # Site settings
-    lang: ko
-    author:
-      name: Alex Lee
+# Site settings
+lang: ko
+author:
+  name: Alex Lee
 
-      # Permalink
-      permalink: /:categories/:year/:month/:day/:title/
+# Permalink
+permalink: /:categories/:year/:month/:day/:title/
 
-      # Collections (나중에 프로젝트 문서, 연구과제용으로 확장 가능)
-      # collections:
-      #   projects:
-      #     output: true
-      #   research:
-      #     output: true
+# Collections (나중에 프로젝트 문서, 연구과제용으로 확장 가능)
+# collections:
+#   projects:
+#     output: true
+#   research:
+#     output: true
