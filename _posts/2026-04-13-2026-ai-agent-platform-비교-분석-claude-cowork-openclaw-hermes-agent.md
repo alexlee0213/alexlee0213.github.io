@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "2026 AI Agent Platform 비교 분석 — Claude Cowork · OpenClaw · Hermes Agent"
-date: 2026-04-13
+date: 2026-04-13 08:58:00 +0900
 categories: [research]
 tags: [AI, Agent, Claude Cowork, OpenClaw, Hermes Agent, k-skill, MCP, SKILL.md]
 excerpt: "2026년 4월 기준 주요 AI 에이전트 플랫폼 3종(Claude Cowork, OpenClaw, Hermes Agent)을 기능, 차별화 요소, 성공 사례, 한국 특화 생태계(k-skill) 관점에서 비교 분석한 연구 보고서."
