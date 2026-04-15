@@ -28,6 +28,9 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/alexlee0213"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/alex-hojong-lee-5760102a5/"
 
 # ─── Permalink ────────────────────────────────────────────────────────────────
 permalink: /:categories/:year/:month/:day/:title/
