@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "OpenClaw 텔레그램 파일 전송 활성화 작업 상세 메모, Claude Code 관점 포함"
-date: 2026-04-18 12:00:00 +0900
+date: 2026-04-18 04:40:00 +0900
 categories: [dev]
 tags: [OpenClaw, Telegram, Claude Code, 파일전송, AGENTS.md]
 excerpt: "OpenClaw에서 텔레그램 파일 전송이 실패하는 원인을 분석하고, managed outbound media path와 운영 규칙 보강으로 해결한 과정을 정리한 기술 메모."
