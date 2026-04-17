@@ -64,28 +64,6 @@ OpenClaw의 normal reply media normalization 경로에는 host-local absolute pa
 
 이건 중요한 포인트다. 모든 로컬 absolute path가 동일하게 취급되는 것이 아니라, managed outbound media root 아래 파일은 실제 전달 경로에서 유효하게 작동했다.
 
-## 설정 변경 내용
-### `tools.allow`에 `message` 추가
-OpenClaw 설정 파일 `~/.openclaw/openclaw.json` 의 `tools` 섹션을 점검하고, 아래 형태로 `message` 허용을 추가했다.
-
-```json
-"tools": {
-  "profile": "coding",
-  "allow": ["message"]
-}
-```
-
-### 이 변경의 의도
-이 설정의 목적은 다음과 같았다.
-- 기존 coding profile은 유지
-- 추가로 message tool을 명시적으로 허용
-- 가능하다면 파일 전달을 더 올바른 경로로 유도
-
-### 이후 관찰된 한계
-하지만 이 설정을 넣은 뒤에도 현재 채팅 세션에서는 실제로 `message` tool이 노출되지 않았다.
-
-즉, static config만으로는 충분하지 않았고, session-level 또는 runtime-level tool exposure 문제가 따로 남아 있었다.
-
 ## AGENTS.md 운영 규칙 보강
 실패를 줄이고 assistant의 동작을 더 안정화하기 위해 AGENTS.md에 운영 규칙을 추가했다.
 
