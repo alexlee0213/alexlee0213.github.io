@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "mcp__jekyll__git_status",
-      "Read(//Users/alexlee/Downloads/**)"
+      "Read(//Users/alexlee/Downloads/**)",
+      "mcp__jekyll__add_post",
+      "mcp__jekyll__edit_post"
     ]
   }
 }
