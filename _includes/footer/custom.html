@@ -82,17 +82,33 @@
     return;
   }
 
-  function themeName() {
-    return document.documentElement.getAttribute('data-theme') === 'light' ? 'default' : 'dark';
+  function themeConfig() {
+    if (document.documentElement.getAttribute('data-theme') === 'light') {
+      return { theme: 'default' };
+    }
+    // mermaid 다크 테마의 기본 파이 색(#0b0000 등)은 이 스킨 배경에 묻혀 보이지 않는다.
+    // 대비가 확보되는 팔레트로 교체한다.
+    return {
+      theme: 'dark',
+      themeVariables: {
+        pie1: '#4db6ac', pie2: '#ba68c8', pie3: '#64b5f6',
+        pie4: '#ffb74d', pie5: '#e57373', pie6: '#aed581',
+        pieOpacity: '1',
+        pieStrokeColor: '#1a1a1a',
+        pieOuterStrokeColor: '#1a1a1a',
+        pieSectionTextColor: '#111111',
+        pieTitleTextColor: '#e8e8e8',
+        pieLegendTextColor: '#e8e8e8'
+      }
+    };
   }
 
   async function render() {
-    mermaid.initialize({
+    mermaid.initialize(Object.assign({
       startOnLoad: false,
-      theme: themeName(),
       securityLevel: 'strict',
       fontFamily: 'inherit'
-    });
+    }, themeConfig()));
     nodes.forEach(function (n) {
       n.removeAttribute('data-processed');
       n.textContent = n.dataset.src;
