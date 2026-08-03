@@ -135,6 +135,23 @@
   border-color: var(--border-color) !important;
 }
 
+/* ─── Mermaid 다이어그램 ─── */
+.mermaid {
+  margin: 1.5em 0;
+  text-align: center;
+  overflow-x: auto;      /* 넓은 다이어그램은 가로 스크롤 */
+  background: none;
+  line-height: normal;
+}
+.mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+/* 렌더 전 원본 텍스트가 잠깐 노출되는 것을 방지 */
+.mermaid:not([data-processed]) {
+  visibility: hidden;
+}
+
 /* ─── Toggle button ─── */
 .theme-toggle {
   background: none;

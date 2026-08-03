@@ -39,3 +39,78 @@
   }
 })();
 </script>
+
+<!-- ─── Mermaid 다이어그램 렌더링 ───────────────────────────────────────────
+     kramdown + rouge 는 ```mermaid 펜스를
+       <div class="language-mermaid highlighter-rouge">…<code>…</code></div>
+     로 내보낸다. 이를 <div class="mermaid"> 로 바꿔치기한 뒤 mermaid.js 로 그린다.
+     원본 소스를 data-src 에 보관해 라이트/다크 토글 시 재렌더한다.
+     mermaid 블록이 없는 페이지에서는 CDN 을 아예 불러오지 않는다.            -->
+<script type="module">
+(async function () {
+  var SEL = [
+    'div.language-mermaid.highlighter-rouge',  // kramdown + rouge (GitHub Pages 기본)
+    'pre > code.language-mermaid',             // rouge 미사용 kramdown
+    'pre > code.mermaid'
+  ].join(', ');
+
+  var hits = Array.prototype.slice.call(document.querySelectorAll(SEL));
+  if (!hits.length) return;
+
+  var nodes = hits.map(function (hit) {
+    var codeEl = hit.tagName === 'CODE' ? hit : hit.querySelector('code');
+    var target = hit.tagName === 'CODE' ? hit.parentElement : hit;   // <pre> 또는 wrapper <div>
+    var div = document.createElement('div');
+    div.className = 'mermaid';
+    div.dataset.src = (codeEl ? codeEl.textContent : target.textContent).trim();
+    target.replaceWith(div);
+    return div;
+  });
+
+  var mermaid;
+  try {
+    mermaid = (await import('https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs')).default;
+  } catch (e) {
+    // CDN 차단·오프라인이면 원본 소스를 코드블록으로 되돌려 최소한 내용은 읽히게 한다
+    nodes.forEach(function (n) {
+      var pre = document.createElement('pre');
+      var code = document.createElement('code');
+      code.textContent = n.dataset.src;
+      pre.appendChild(code);
+      n.replaceWith(pre);
+    });
+    return;
+  }
+
+  function themeName() {
+    return document.documentElement.getAttribute('data-theme') === 'light' ? 'default' : 'dark';
+  }
+
+  async function render() {
+    mermaid.initialize({
+      startOnLoad: false,
+      theme: themeName(),
+      securityLevel: 'strict',
+      fontFamily: 'inherit'
+    });
+    nodes.forEach(function (n) {
+      n.removeAttribute('data-processed');
+      n.textContent = n.dataset.src;
+    });
+    try {
+      await mermaid.run({ nodes: nodes });
+    } catch (e) {
+      console.error('[mermaid] 렌더 실패:', e);
+    }
+  }
+
+  await render();
+
+  // 테마 토글 시 다이어그램 색상도 함께 전환
+  new MutationObserver(function (muts) {
+    for (var i = 0; i < muts.length; i++) {
+      if (muts[i].attributeName === 'data-theme') { render(); return; }
+    }
+  }).observe(document.documentElement, { attributes: true });
+})();
+</script>
