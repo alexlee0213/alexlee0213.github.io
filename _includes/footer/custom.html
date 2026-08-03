@@ -82,24 +82,26 @@
     return;
   }
 
+  // mermaid 기본 파이 색은 양쪽 테마 모두에서 문제가 있다.
+  //   다크: #0b0000 등 거의 검정 → 배경에 묻힘
+  //   라이트: #ECECFF, #ffffde 등 거의 흰색 → 배경에 묻힘
+  // 두 배경 모두에서 대비가 확보되는 중간 톤 팔레트로 통일한다.
+  var PIE = {
+    pie1: '#4db6ac', pie2: '#ba68c8', pie3: '#64b5f6',
+    pie4: '#ffb74d', pie5: '#e57373', pie6: '#aed581',
+    pieOpacity: '1',
+    pieSectionTextColor: '#111111'   // 조각 위 퍼센트 숫자
+  };
+
   function themeConfig() {
-    if (document.documentElement.getAttribute('data-theme') === 'light') {
-      return { theme: 'default' };
-    }
-    // mermaid 다크 테마의 기본 파이 색(#0b0000 등)은 이 스킨 배경에 묻혀 보이지 않는다.
-    // 대비가 확보되는 팔레트로 교체한다.
+    var light = document.documentElement.getAttribute('data-theme') === 'light';
     return {
-      theme: 'dark',
-      themeVariables: {
-        pie1: '#4db6ac', pie2: '#ba68c8', pie3: '#64b5f6',
-        pie4: '#ffb74d', pie5: '#e57373', pie6: '#aed581',
-        pieOpacity: '1',
-        pieStrokeColor: '#1a1a1a',
-        pieOuterStrokeColor: '#1a1a1a',
-        pieSectionTextColor: '#111111',
-        pieTitleTextColor: '#e8e8e8',
-        pieLegendTextColor: '#e8e8e8'
-      }
+      theme: light ? 'default' : 'dark',
+      themeVariables: Object.assign({}, PIE, light
+        ? { pieStrokeColor: '#ffffff', pieOuterStrokeColor: '#888888',
+            pieTitleTextColor: '#222222', pieLegendTextColor: '#222222' }
+        : { pieStrokeColor: '#1a1a1a', pieOuterStrokeColor: '#1a1a1a',
+            pieTitleTextColor: '#e8e8e8', pieLegendTextColor: '#e8e8e8' })
     };
   }
 
