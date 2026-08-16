@@ -2,3 +2,6 @@
 .claude/settings.json
 
 _site/
+Gemfile.lock
+.bundle/
+vendor/

@@ -1,11 +1,7 @@
 source "https://rubygems.org"
 
-gem "github-pages", group: :jekyll_plugins
+gem "github-pages", "232", group: :jekyll_plugins
 gem "jekyll-include-cache", group: :jekyll_plugins
 
-# Ruby 3.4+/4.0 removed these from default gems; jekyll 3.9 still needs them
-gem "csv"
-gem "logger"
-gem "base64"
+# webrick was removed from default gems in Ruby 3.0; jekyll serve needs it
 gem "webrick"
-gem "bigdecimal"
