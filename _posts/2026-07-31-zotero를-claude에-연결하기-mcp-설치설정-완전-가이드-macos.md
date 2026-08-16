@@ -4,7 +4,7 @@ title: "Zotero를 Claude에 연결하기 — MCP 설치·설정 완전 가이드
 date: 2026-07-31 14:40:58 +0900
 categories: [dev]
 tags: [Zotero, MCP, Claude, ClaudeCode, 연구도구, macOS, 설치가이드]
-excerpt: "zotero-mcp를 이용해 로컬 Zotero 라이브러리를 Claude에 연결하는 방법. 설치, 로컬 API 활성화(Zotero 9 기준), Claude Desktop·Claude Code 등록, 그리고 설정 마법사에서 만나는 임베딩 모델·DB 갱신 주기·PDF 페이지 캡 옵션의 의미까지 정리했다."
+excerpt: "zotero-mcp를 이용해 로컬 Zotero 라이브러리를 Claude에 연결하는 방법. 설치, 로컬 API 활성화(Zotero 9 기준), Claude Desktop·Claude Code 등록, 설정 마법사 옵션, 그리고 쓰기 작업을 위한 하이브리드 모드까지 정리했다."
 ---
 Zotero 라이브러리를 MCP(Model Context Protocol)로 Claude에 연결하면, Claude가 내 소장 논문을 직접 검색·열람·요약할 수 있다. 이 글은 커뮤니티 서버 `54yyyu/zotero-mcp`를 로컬 방식으로 설치하는 전 과정을 정리한다. 로컬 방식은 API 키가 필요 없고 PDF 전문까지 접근할 수 있다.
 
@@ -86,13 +86,52 @@ claude mcp list   # 확인
 
 ## 로컬 방식의 한계
 
-로컬 JS API 특성상 태그 편집 등 쓰기(write) 작업은 제대로 안 될 수 있다. 검색·읽기·주석 추출은 문제없다. 쓰기까지 필요하면 로컬 읽기 + 웹 API 쓰기의 하이브리드 모드를 고려한다(웹 API 키 추가 필요).
+로컬 JS API 특성상 태그 편집·자료 추가 등 쓰기(write) 작업은 제대로 안 될 수 있다. 검색·읽기·주석 추출은 문제없다. 쓰기까지 필요하면 아래 하이브리드 모드를 설정한다.
+
+## 6. 쓰기까지 하려면 — 하이브리드 모드
+
+로컬 API는 읽기만 빠르고 쓰기가 안 되므로, 쓰기는 **Zotero 웹 API로 우회**시킨다. 로컬 읽기 + 웹 쓰기를 합친 것이 하이브리드 모드다. 필요한 준비물은 두 가지다.
+
+**① Zotero API 키** — [zotero.org/settings/keys](https://www.zotero.org/settings/keys)에서 새 키를 생성하되, **쓰기 권한("Allow write access")을 반드시 허용**한다. 읽기 전용 키로는 쓰기가 안 된다.
+
+**② Library ID** — 같은 페이지에 표시되는 **숫자 userID**. (그룹 라이브러리에 쓰려면 그룹 ID를 쓰고 타입도 group으로 지정한다.)
+
+가장 쉬운 설정은 setup 마법사를 다시 도는 것이다. 기본 setup이 하이브리드 모드를 자동 구성하며 API 키만 넣으면 된다.
+
+```bash
+zotero-mcp setup
+```
+
+수동으로 하려면 `ZOTERO_LOCAL`은 그대로 두고 API 자격증명을 추가한다. **로컬 true + API 키가 함께 있으면 자동으로 하이브리드로 동작**한다.
+
+```json
+{
+  "mcpServers": {
+    "zotero": {
+      "command": "zotero-mcp",
+      "env": {
+        "ZOTERO_LOCAL": "true",
+        "ZOTERO_API_KEY": "발급받은_키",
+        "ZOTERO_LIBRARY_ID": "숫자_userID",
+        "ZOTERO_LIBRARY_TYPE": "user"
+      }
+    }
+  }
+}
+```
+
+수정 후 Claude Desktop을 완전히 재시작한다. Claude Code라면 `claude mcp add` 시 같은 `-e` 옵션들을 함께 넘기면 된다.
+
+알아둘 점 몇 가지. 웹 API로 쓰면 Zotero 클라우드에 반영되므로 **로컬 앱이 동기화(Sync 로그인)돼 있어야** 로컬과 웹 라이브러리가 일치한다. PDF 첨부까지 웹으로 올리는 작업은 무료 300MB 용량에 영향을 줄 수 있다(메타데이터·태그 쓰기는 용량과 무관). 회사 계정이라면 키에 **필요한 최소 권한만** 부여하는 게 안전하다. 그리고 터미널에서 같은 환경변수를 export해두면 config 값을 덮어쓴다는 점도 기억하자.
+
+이렇게 설정하면 "DOI로 논문 추가하고 오픈액세스 PDF 붙이기", "특정 자료들에 태그 달기", "새 컬렉션 만들어 자료 넣기", "중복 자료 병합", "메타데이터 수정" 같은 쓰기 작업을 Claude에게 시킬 수 있다.
 
 ## 트러블슈팅
 
 - 결과가 안 나옴 → Zotero 앱이 켜져 있고 로컬 API 토글이 켜졌는지 확인
 - 전문이 안 나옴 → Zotero 7+ 인지 확인
 - 도구가 Claude에 안 뜸 → Claude Desktop 완전 재시작, config 확인
+- 쓰기가 안 됨 → 하이브리드 설정과 API 키의 쓰기 권한 확인
 - DB 오류 → `zotero-mcp update-db --force-rebuild`
 
 다음 글에서는 이렇게 연결한 Zotero를 실제 연구 워크플로우에서 어떻게 활용하는지, 장점과 실전 팁을 다룬다.
