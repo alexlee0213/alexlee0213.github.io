@@ -5,6 +5,7 @@ description: "개인 블로그 & 프로젝트 문서 & 연구 노트"
 baseurl: ""
 url: "https://alexlee0213.github.io"
 locale: "ko-KR"
+timezone: "Asia/Seoul"
 
 # ─── Include ──────────────────────────────────────────────────────────────────
 include:
