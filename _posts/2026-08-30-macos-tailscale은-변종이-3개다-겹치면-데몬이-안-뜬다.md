@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "macOS Tailscale은 변종이 3개다 — 겹치면 데몬이 안 뜬다"
-date: 2026-08-30 12:10:00 +0900
+date: 2026-08-30 03:10:00 +0900
 categories: [dev]
 tags: [Tailscale, macOS, 시스템확장, SystemExtension, Homebrew, 트러블슈팅, 포렌식]
 excerpt: "CLIError error 1, tailscaled.socket 없음, inet 100.x 없음. 증상 세 개가 전부 같은 원인을 가리킨다. macOS Tailscale은 App Store판·독립판·오픈소스 CLI 세 가지고, 앱 변종이 겹치면 데몬 역할을 하는 시스템 확장이 아예 뜨지 않는다."

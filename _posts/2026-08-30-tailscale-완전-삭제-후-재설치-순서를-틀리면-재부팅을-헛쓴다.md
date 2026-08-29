@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Tailscale 완전 삭제 후 재설치 — 순서를 틀리면 재부팅을 헛쓴다"
-date: 2026-08-30 12:20:00 +0900
+date: 2026-08-30 03:20:00 +0900
 categories: [dev]
 tags: [Tailscale, macOS, Homebrew, brew-services, systemextensionsctl, launchd, 트러블슈팅]
 excerpt: "macOS에서 Tailscale을 완전히 걷어내는 절차. sudo 없는 brew services는 root 데몬을 못 보고, brew uninstall은 빈 디렉터리를 남기며, 시스템 확장은 앱을 지워도 안 빠진다. 순서를 지키지 않으면 재부팅을 헛쓰게 된다."
