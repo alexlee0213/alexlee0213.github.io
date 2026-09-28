@@ -8,9 +8,10 @@ excerpt: >-
   혼자 쓰던 Google Drive MCP의 Cloud 프로젝트와 OAuth Client를 다른 사람도 쓰게 하려면 무엇을 배포해야 할까. 같은 조직의 내부 배포, 외부 협력자 시험, 불특정 다수 공개는 서로 다른 문제다. Client Secret을 나눠주는 방식의 한계와 현재 Preview에서 현실적인 배포 모델을 정리한다.
 ---
 
-> **Aside에 Google Drive MCP 붙이기 시리즈**
+> **공식 Google Drive MCP 연결 시리즈**
 > 1. [Aside에 공식 Google Drive MCP 연결하기: OAuth 콜백부터 Developer Preview까지](/dev/2026/09/19/aside에-공식-google-drive-mcp-연결하기-oauth-콜백부터-developer-preview까지/)
 > 2. **Google Drive MCP를 팀에 배포하기: Internal, External, OAuth 검증의 경계** (현재 글)
+> 3. [Claude Code에 공식 Google Drive MCP 연결하기: user scope와 OAuth 콜백](/dev/2026/09/28/claude-code에-공식-google-drive-mcp-연결하기-user-scope와-oauth-콜백/)
 
 > 이 글은 2026년 9월 19일 Google Drive MCP Developer Preview와 Aside 1.26.914를 기준으로 작성했다. Preview 가입 조건과 Google OAuth 정책은 바뀔 수 있다.
 

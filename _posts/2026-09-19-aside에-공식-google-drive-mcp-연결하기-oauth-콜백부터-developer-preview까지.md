@@ -8,9 +8,10 @@ excerpt: >-
   Aside에 Google의 공식 Drive MCP 서버를 붙였다. API와 OAuth만 설정하면 끝날 줄 알았지만 Developer Preview 승인, 고정 콜백 URI, 재인증, 새 채팅 반영이라는 네 개의 관문이 더 있었다. 실제 오류 흐름과 처음부터 다시 한다면 밟을 순서를 정리한다.
 ---
 
-> **Aside에 Google Drive MCP 붙이기 시리즈**
+> **공식 Google Drive MCP 연결 시리즈**
 > 1. **Aside에 공식 Google Drive MCP 연결하기: OAuth 콜백부터 Developer Preview까지** (현재 글)
 > 2. [Google Drive MCP를 팀에 배포하기: Internal, External, OAuth 검증의 경계](/dev/2026/09/19/google-drive-mcp를-팀에-배포하기-internal-external-oauth-검증의-경계/)
+> 3. [Claude Code에 공식 Google Drive MCP 연결하기: user scope와 OAuth 콜백](/dev/2026/09/28/claude-code에-공식-google-drive-mcp-연결하기-user-scope와-oauth-콜백/)
 
 > 이 글은 2026년 9월 19일, Aside 1.26.914와 Google Drive MCP Developer Preview를 기준으로 작성했다. Preview 기능과 Aside 화면 이름은 이후 바뀔 수 있다.
 
